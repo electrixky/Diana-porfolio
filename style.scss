@@ -41,7 +41,7 @@ html {
 	}
 
 	&__link {
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 	}
 
 	&__link:hover {
@@ -50,10 +50,19 @@ html {
 }
 
 .home {
-	background-image: url("/assets/portrait.png"), url("/assets/header-bg.png");
-	background-repeat: no-repeat, no-repeat;
-	background-position: right, bottom;
-	background-size: contain, cover;
+	background-image: url("/assets/header-bg.png");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: cover;
+
+	&__portrait {
+		max-width: 1350px;
+		margin: 0 auto;
+		background-image: url("/assets/portrait.png");
+		background-repeat: no-repeat;
+		background-position: right;
+		background-size: contain;
+	}
 
 	&__title {
 		color: #000;
@@ -225,6 +234,106 @@ html {
 	}
 }
 
+.slider {
+	background: linear-gradient(180deg, #e3effa -14.92%, #a8cdfc 57.1%);
+	padding: 40px 100px 30px;
+	border-radius: 20px;
+	color: #fff;
+	overflow: hidden;
+	position: relative;
+
+	.slick-arrow {
+		position: absolute;
+		top: 40%;
+		//transform: translate(0, -50%);
+		font-size: 0;
+		width: 30px;
+		height: 20px;
+		cursor: pointer;
+		border: none;
+
+		&.slick-prev {
+			left: -70px;
+			background: url("/assets/icons/arrowLeft.png") 0 0 / 100% no-repeat;
+		}
+
+		&.slick-next {
+			right: -70px;
+			background: url("/assets/icons/arrowRight.png") 0 0 / 100% no-repeat;
+		}
+	}
+
+	.slick-dots {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 15px;
+	}
+
+	.slick-dots li {
+		list-style: none;
+		margin: 0 5px;
+
+		&.slick-active button {
+			background-color: #5a98f2;
+		}
+	}
+
+	.slick-dots button {
+		font-size: 0;
+		width: 2px;
+		height: 10px;
+		background-color: rgb(241, 241, 241);
+		border-radius: 50%;
+		border: none;
+		outline: none;
+		cursor: pointer;
+	}
+
+
+	&__title {
+		margin-bottom: 25px;
+		color: #fff;
+	}
+
+	.slide {
+		border: 1px solid #fff;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+		&__person {
+			display: flex;
+			max-width: 50%;
+			padding: 20px 10px 30px;
+
+			&::after {
+				content: "";
+				width: 1px;
+				max-height: 90%;
+				background-color: #fff;
+				transform: translateY(5px);
+			}
+		}
+
+		&__photo {
+			border-radius: 50%;
+			margin-right: 20px;
+		}
+
+		&__name {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		&__comment {
+			max-width: 50%;
+			line-height: 24px;
+		}
+	}
+}
+
 .contact {
 	background-image: url("/assets/contact-bg.png");
 	padding-bottom: 50px;
@@ -313,7 +422,7 @@ html {
 		cursor: pointer;
 		margin-bottom: 20px;
 		font-size: 16px;
-		transition: all .2s ease-in;
+		transition: all 0.2s ease-in;
 
 		&:hover {
 			color: #5a98f2;
